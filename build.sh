@@ -36,9 +36,9 @@ cat <<EOF >"$BUILD_SCRIPT"
     cd ffmpeg
     ./configure --disable-everything \
         --enable-protocol=file,data \
-        --enable-demuxer=mp3,flac,wav,ogg,matroska,mov,aac,mp4 \
-        --enable-decoder=mp3,flac,vorbis,opus,aac,pcm_s16le \
-        --enable-encoder=mp3,flac,vorbis,opus,aac,pcm_s16le \
+        --enable-demuxer=m4a,mp3,flac,wav,ogg,matroska,mov,aac,mp4 \
+        --enable-decoder=alac,mp3,flac,vorbis,opus,aac,pcm_s16le \
+        --enable-encoder=pcm_s16le \
         --enable-parser=mp3,aac,flac,opus,vorbis \
         --enable-filter=aformat,aresample,volume \
         --enable-bsf=aac_adtstoasc,mp3decomp \
