@@ -35,17 +35,18 @@ cat <<EOF >"$BUILD_SCRIPT"
     git clone --filter=blob:none --branch='$GIT_BRANCH' '$FFMPEG_REPO' ffmpeg
     cd ffmpeg
     ./configure --disable-everything \
-      --enable-protocol=file,data \
-      --enable-demuxer=mp3,flac,wav,ogg,matroska,mov,aac \
-      --enable-muxer=mp3,flac,wav,ogg,matroska,webm,mp4,adts \
-      --enable-decoder=mp3,flac,vorbis,opus,aac,pcm_s16le \
-      --enable-encoder=mp3,flac,vorbis,opus,aac,pcm_s16le \
-      --enable-parser=mp3,flac,aac,vorbis \
-      --prefix=/ffbuild/prefix --pkg-config-flags="--static" \$FFBUILD_TARGET_FLAGS \$FF_CONFIGURE \
-      --extra-cflags="\$FF_CFLAGS" --extra-cxxflags="\$FF_CXXFLAGS" \
-      --extra-ldflags="\$FF_LDFLAGS" --extra-ldexeflags="\$FF_LDEXEFLAGS" \
-      --cc="\$CC" --cxx="\$CXX" --ar="\$AR" --ranlib="\$RANLIB" --nm="\$NM" \
-      --extra-version="\$(date +%Y%m%d)"
+        --enable-protocol=file,data \
+        --enable-demuxer=mp3,flac,wav,ogg,matroska,mov,aac,mp4 \
+        --enable-decoder=mp3,flac,vorbis,opus,aac,pcm_s16le \
+        --enable-encoder=mp3,flac,vorbis,opus,aac,pcm_s16le \
+        --enable-parser=mp3,aac,flac,opus,vorbis \
+        --enable-filter=aformat,aresample,volume \
+        --enable-bsf=aac_adtstoasc,mp3decomp \
+        --prefix=/ffbuild/prefix --pkg-config-flags="--static" \$FFBUILD_TARGET_FLAGS \$FF_CONFIGURE \
+        --extra-cflags="\$FF_CFLAGS" --extra-cxxflags="\$FF_CXXFLAGS" \
+        --extra-ldflags="\$FF_LDFLAGS" --extra-ldexeflags="\$FF_LDEXEFLAGS" \
+        --cc="\$CC" --cxx="\$CXX" --ar="\$AR" --ranlib="\$RANLIB" --nm="\$NM" \
+        --extra-version="\$(date +%Y%m%d)"
     make -j\$(nproc) V=1
     make install install-doc
 EOF
