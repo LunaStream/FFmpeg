@@ -37,10 +37,9 @@ cat <<EOF >"$BUILD_SCRIPT"
 
     ./configure --disable-everything \
         --enable-decoder=aac,flac,opus,vorbis \
-        --enable-encoder=pcm_s16le,aac,flac,opus,vorbis \
+        --enable-encoder=pcm_s16le \
         --enable-parser=aac,flac,opus,vorbis \
         --enable-demuxer=mp4,mov,ogg,flac \
-        --enable-muxer=mp4,mov,ogg,flac \
         --enable-protocol=data \
         --enable-filter=aformat,aresample,volume \
         --enable-bsf=aac_adtstoasc,mp3decomp \
