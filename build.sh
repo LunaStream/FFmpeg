@@ -41,9 +41,8 @@ cat <<EOF >"$BUILD_SCRIPT"
       --enable-decoder=mp3,flac,vorbis,opus,aac,pcm_s16le \
       --enable-encoder=mp3,flac,vorbis,opus,aac,pcm_s16le \
       --enable-parser=mp3,flac,aac,vorbis \
-      --enable-libmfx --enable-vaapi \
-      --prefix=/ffbuild/prefix --pkg-config-flags="--static" \$FFBUILD_TARGET_FLAGS \$FF_CONFIGURE \
-      --extra-cflags="\$FF_CFLAGS" --extra-cxxflags="\$FF_CXXFLAGS" --extra-libs="\$FF_LIBS" \
+      --prefix=/ffbuild/prefix --pkg-config-flags="--static" \$FFBUILD_TARGET_FLAGS \
+      --extra-cflags="\$FF_CFLAGS" --extra-cxxflags="\$FF_CXXFLAGS" \
       --extra-ldflags="\$FF_LDFLAGS" --extra-ldexeflags="\$FF_LDEXEFLAGS" \
       --cc="\$CC" --cxx="\$CXX" --ar="\$AR" --ranlib="\$RANLIB" --nm="\$NM" \
       --extra-version="\$(date +%Y%m%d)"
