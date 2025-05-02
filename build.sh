@@ -38,9 +38,9 @@ cat <<EOF >"$BUILD_SCRIPT"
         --enable-protocol=file,pipe,data \
         --enable-demuxer=m4a,mp3,flac,wav,ogg,matroska,mov,aac,mp4 \
         --enable-decoder=alac,mp3,flac,vorbis,opus,aac,pcm_s16le \
-        --enable-muxer=pcm_s16le \
+        --enable-muxer=pcm_s16le,opus \
         --enable-encoder=pcm_s16le,opus \
-        --enable-parser=mp3,aac,flac,opus,vorbis,mov,aac,mp4,m4a,matroska,wav \
+        --enable-parser=mp3,aac,flac,opus,vorbis,mov,mp4,m4a,matroska,wav \
         --enable-filter=aformat,aresample,volume \
         --enable-bsf=aac_adtstoasc,mp3decomp \
         --enable-libopus \
