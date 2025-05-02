@@ -35,7 +35,7 @@ cat <<EOF >"$BUILD_SCRIPT"
     git clone --filter=blob:none --branch='$GIT_BRANCH' '$FFMPEG_REPO' ffmpeg
     cd ffmpeg
     ./configure --disable-everything \
-        --enable-protocol=file,data \
+        --enable-protocol=file,pipe \
         --enable-demuxer=m4a,mp3,flac,wav,ogg,matroska,mov,aac,mp4 \
         --enable-decoder=alac,mp3,flac,vorbis,opus,aac,pcm_s16le \
         --enable-encoder=pcm_s16le \
